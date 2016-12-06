@@ -14,7 +14,7 @@ names(X_test) = features
 
 y_test[,2] = activity_labels[y_test[,1]]
 
-# c. Bind test data
+## c. Bind test data
 test_data <- cbind(as.data.table(subject_test), y_test, X_test)
 
 ## d. Read in train sets
@@ -25,7 +25,7 @@ names(X_train) = features
 
 y_train[,2] = activity_labels[y_train[,1]]
 
-# e. Bind train data
+## e. Bind train data
 train_data <- cbind(as.data.table(subject_train), y_train, X_train)
 ## f. merge test and train data
 data = rbind(test_data, train_data)
