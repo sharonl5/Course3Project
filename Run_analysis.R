@@ -5,7 +5,7 @@
 ## 4. Appropriately labels the data set with descriptive activity names.
 ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-setwd("C:/Users/sharon.liu/Documents/R/course 3/")
+setwd("..../")
 getwd()
 
 install.packages("data.table", dependencies = TRUE)
@@ -25,7 +25,7 @@ subject_test <- read.table("./test/subject_test.txt")
 # Load: data column names
 features <- read.table("./features.txt")[,2]
 names(X_test) <- features
-names(X_train) = features
+names(X_train) <- features
 # Extract only the measurements on the mean and standard deviation for each measurement.
 extract_features <- grepl("mean|std", features)
 
@@ -47,20 +47,20 @@ y_train <- read.table("./train/y_train.txt")
 subject_train <- read.table("./train/subject_train.txt")
 
 # Extract only the measurements on the mean and standard deviation for each measurement.
-X_train = X_train[,extract_features]
+X_train <- X_train[,extract_features]
 
 # Load activity data
-y_train[,2] = activity_labels[y_train[,1]]
-names(y_train) = c("Activity_ID", "Activity_Label")
-names(subject_train) = "subject"
+y_train[,2] <- activity_labels[y_train[,1]]
+names(y_train) <- c("Activity_ID", "Activity_Label")
+names(subject_train) <- "subject"
 
 # Bind data
 train_data <- cbind(as.data.table(subject_train), y_train, X_train)
 
 # Merge test and train data
-data = rbind(test_data, train_data, fill=TRUE)
+data <- rbind(test_data, train_data, fill=TRUE)
 
-id_labels   = c("subject", "Activity_ID", "Activity_Label")
+id_labels  <- c("subject", "Activity_ID", "Activity_Label")
 data_labels = setdiff(colnames(data), id_labels)
 melt_data      = melt(data, id = id_labels, measure.vars = data_labels)
 
