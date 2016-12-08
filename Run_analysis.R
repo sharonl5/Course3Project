@@ -26,7 +26,7 @@ subject_test <- read.table("./test/subject_test.txt")
 features <- read.table("./features.txt")[,2]
 names(X_test) <- features
 names(X_train) <- features
-# Extract only the measurements on the mean and standard deviation for each measurement.
+
 extract_features <- grepl("mean|std", features)
 
 # Extract only the measurements on the mean and standard deviation for each measurement.
