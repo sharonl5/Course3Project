@@ -20,10 +20,5 @@ The script `run_analysis.R`
 
 # Tidy data
 
-the data set contains 180 rows, 160 columns
+the data set contains 180 rows, 160 variables
 
-
-Next, the activity labels are replaced with descriptive activity names, definedin `activity_labels.txt` in the original data folder.The final step creates a tidy data set with the average of each variable foreach activity and each subject. 10299 instances are split into 180 groups (30subjects and 6 activities) and 66 mean and standard deviation features areaveraged for each group. 
-
-
-The resulting data table has 180 rows and 66 columns.The tidy data set is exported to `UCI_HAR_tidy.csv` where the first row is theheader containing the names for each column.
