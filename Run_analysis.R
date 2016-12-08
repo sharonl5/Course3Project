@@ -4,17 +4,10 @@
 ## 3. Uses descriptive activity names to name the activities in the data set
 ## 4. Appropriately labels the data set with descriptive activity names.
 ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-if (!require("data.table")) {
-  install.packages("data.table")
-}
-
-if (!require("reshape2")) {
-  install.packages("reshape2")
-}
-
-require("data.table")
-require("reshape2")
+install.packages("data.table", dependencies = TRUE)
+library(data.table)
+install.packages("reshape2", dependencies = TRUE)
+library(reshape2)
 
 # Load: activity labels
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
