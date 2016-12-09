@@ -1,7 +1,8 @@
 # Course3Project
 The purpose of this project is to demonstrate our ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
-the program is doing following tasks:
+# the program is doing following tasks:
+
 1. Merges the training and the test sets to create one data set.
 
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
