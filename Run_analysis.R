@@ -5,7 +5,7 @@
 ## 4. Appropriately labels the data set with descriptive activity names.
 ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-setwd("C:/Users/sharon.liu/Documents/R/course 3/")
+setwd(".../course 3/")
 getwd()
 
 install.packages("data.table", dependencies = TRUE)
