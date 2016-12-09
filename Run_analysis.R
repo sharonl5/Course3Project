@@ -15,7 +15,7 @@ install.packages("reshape2", dependencies = TRUE)
 library(reshape2)
 
 # Load: activity labels
-activity_labels <- read.table("C:/Users/sharon.liu/Documents/R/course 3/activity_labels.txt")[,2]
+alabels <- read.table("./activity_labels.txt")[,2]
 
 # Load and process X_test & y_test data.
 X_test <- read.table("./test/X_test.txt")
@@ -33,7 +33,7 @@ extract_features <-grepl("mean\\(\\)|std\\(\\)", names(X_test))
 X_test <- X_test[,extract_features]
 
 # Load activity labels
-y_test[,2] <- activity_labels[y_test[,1]]
+y_test[,2] <- alabels[y_test[,1]]
 names(y_test) <- c("Activity_ID", "Activity_Label")
 names(subject_test) <- "subject"
 
@@ -51,7 +51,7 @@ names(X_train) = features
 X_train = X_train[,extract_features]
 
 # Load activity data
-y_train[,2] = activity_labels[y_train[,1]]
+y_train[,2] = alabels[y_train[,1]]
 names(y_train) = c("Activity_ID", "Activity_Label")
 names(subject_train) = "subject"
 
@@ -63,9 +63,9 @@ data = rbind(test_data, train_data, fill=TRUE)
 
 id_labels   = c("subject", "Activity_ID", "Activity_Label")
 data_labels = setdiff(colnames(data), id_labels)
-melt_data      = melt(data, id = id_labels, measure.vars = data_labels)
+data      = melt(data, id = id_labels, measure.vars = data_labels)
 
 # Apply mean function to dataset using dcast function
-tidy = dcast(melt_data, subject + Activity_Label ~ variable, mean)
+tidy = dcast(data, subject + Activity_Label ~ variable, mean)
 
 write.table(tidy, file = "./tidy.txt")
