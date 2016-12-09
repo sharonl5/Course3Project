@@ -21,6 +21,7 @@ The script `run_analysis.R`
 # Tidy data
 
 the data set contains 180 rows, 66 variables
+
 [1] "subject"                     "Activity_Label"              "tBodyAcc-mean()-X"          
 [4] "tBodyAcc-mean()-Y"           "tBodyAcc-mean()-Z"           "tBodyAcc-std()-X"           
 [7] "tBodyAcc-std()-Y"            "tBodyAcc-std()-Z"            "tGravityAcc-mean()-X"       
